@@ -43,15 +43,9 @@ Products products2 = new Products
 };
 
 
-
-
-
 AdminManager adminManager = new AdminManager(userlist, productlist);
 
-
-
 Usermanager cashier1 = new Usermanager(user1, productlist);
-
 
 adminManager.AddUser(user1);
 //adminManager.AddUser(user2);
@@ -59,16 +53,6 @@ adminManager.AddUser(user1);
 adminManager.Add(products1);
 adminManager.Add(products2);
 
-
-
-
-//cashier1.Add(products1);
 cashier1.GetAllProduct();
 
-
-
 //adminManager.GetAllProduct();
-
-//Console.WriteLine(adminManager._userlist[1].Name);
-
-
