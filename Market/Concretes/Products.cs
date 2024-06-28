@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Market__CRM
+namespace Market.Concretes
 {
     internal class Products : Category
     {

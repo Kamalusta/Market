@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Market__CRM
+namespace Market.Concretes
 {
     internal class Usermanager : ProductManager
     {
@@ -15,19 +15,19 @@ namespace Market__CRM
         public Usermanager(Users user, List<Products> products)
         {
             _user = user;
-            base.ProductList = products;
+            ProductList = products;
         }
 
         public override void Delete(Products products)
         {
-            if(_user.Role != "cashier")
+            if (_user.Role != "cashier")
                 base.Delete(products);
             else
                 Console.WriteLine("Cashier can not delete product");
         }
 
         public override void Add(Products products)
-        {            
+        {
             if (_user.Role != "cashier")
                 base.Add(products);
             else
@@ -35,7 +35,7 @@ namespace Market__CRM
         }
 
         public override void Update(int id, string newName, double newPrice, int newCount)
-        {                            
+        {
             if (_user.Role != "cashier")
                 base.Update(id, newName, newPrice, newCount);
             else
