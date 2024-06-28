@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Market.Concretes
+namespace Market__CRM
 {
     internal class AdminManager : ProductManager
     {
@@ -14,17 +14,17 @@ namespace Market.Concretes
         public AdminManager(List<Users> users, List<Products> products)
         {
             _userlist = users;
-            ProductList = products;
+            base.ProductList = products;
         }
 
         public void AddUser(Users user)
         {
-            _userlist.Add(user);
+            this._userlist.Add(user);
         }
 
         public void DeleteUser(Users user)
         {
-            _userlist.Remove(user);
+            this._userlist.Remove(user);
         }
     }
 }

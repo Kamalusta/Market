@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Market.Concretes
+namespace Market__CRM
 {
-    internal class BaseEntity
+    internal class Category : BaseEntity
     {
-        public int Id { get; set; }
+        public string CategoryName { get; set; }
     }
 }

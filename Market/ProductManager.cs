@@ -1,6 +1,4 @@
-﻿using Market.Abstracts;
-
-namespace Market.Concretes
+﻿namespace Market__CRM
 {
     internal class ProductManager : IProductManager
     {
@@ -11,7 +9,7 @@ namespace Market.Concretes
             bool checker = false;
             foreach (var item in ProductList)
             {
-                if (item == products)
+                if(item == products)
                 {
                     checker = true;
                     Console.WriteLine("This product is already have");
