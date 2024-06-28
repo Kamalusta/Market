@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Market__CRM
+﻿namespace Market__CRM
 {
     internal class ProductManager : IProductManager
     {
         public List<Products> ProductList;
 
-     /*   public ProductManager(List<Products> _ProductList)
-        {
-            this.ProductList = _ProductList;
-        }
-*/
         public virtual void Add(Products products)
         {
             ProductList.Add(products);
@@ -51,15 +40,15 @@ namespace Market__CRM
         {
             foreach (var product in ProductList)
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine($"Name:{product.ProductName}\n Price:{product.ProductPrice}\n Count:{product.ProductCount}\n Category:{product.ProductCategoryId}\n");
             }
         }
 
         public void GetProductByCategory(Category category)
         {
-            foreach(var product in ProductList)
+            foreach (var product in ProductList)
             {
-                if(category.Id == product.ProductCategoryId)
+                if (category.Id == product.ProductCategoryId)
                 {
                     Console.WriteLine(product.ProductName);
                 }
@@ -70,10 +59,33 @@ namespace Market__CRM
         {
             foreach (var item in ProductList)
             {
-                if(item.Id == id)
+                if (item.Id == id)
                     Console.WriteLine(item.ProductName);
             }
         }
 
+
+        public void Sell(Products Product, int count)
+        {
+            foreach (var item in ProductList)
+            {
+                if (item == Product && item.ProductCount < count)
+                    Console.WriteLine("There is not enought product");
+                else if (item == Product)
+                {
+                    item.ProductCount -= count;
+                }
+
+            }
+        }
+
+        public virtual void Return(Products Product, int count)
+        {
+            foreach (var item in ProductList)
+            {
+                if (item == Product)
+                    item.ProductCount += count;
+            }
+        }
     }
 }

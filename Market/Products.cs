@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Market__CRM
 {
-    internal class Products : BaseEntity
+    internal class Products : Category
     {
         public string ProductName { get; set; }
         public double ProductPrice { get; set; }

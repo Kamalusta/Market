@@ -16,7 +16,7 @@ user2.Id = 1;
 user2.Name = "user2";
 user2.Age = 19;
 user2.PhoneNumber = "+98222";
-user2.Role = "senior cashier";
+user2.Role = "Sr cashier";
 
 Category category1 = new Category();
 category1.Id = 0;
@@ -45,14 +45,23 @@ Products products2 = new Products
 
 AdminManager adminManager = new AdminManager(userlist, productlist);
 
-Usermanager cashier1 = new Usermanager(user1, productlist);
+Usermanager cashier = new Usermanager(user1, productlist);
+Usermanager SrCashier = new Usermanager(user2, productlist);
+
 
 adminManager.AddUser(user1);
-//adminManager.AddUser(user2);
+adminManager.AddUser(user2);
 //adminManager.Delete(user1);
 adminManager.Add(products1);
 adminManager.Add(products2);
 
-cashier1.GetAllProduct();
+//cashier1.GetAllProduct();
+
+//adminManager.GetProductById(0);
+
+cashier.Sell(products1, 4);
+SrCashier.Return(products1, 2);
+cashier.GetAllProduct();
+
 
 //adminManager.GetAllProduct();
