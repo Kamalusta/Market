@@ -6,7 +6,18 @@
 
         public virtual void Add(Products products)
         {
-            ProductList.Add(products);
+            bool checker = false;
+            foreach (var item in ProductList)
+            {
+                if(item == products)
+                {
+                    checker = true;
+                    Console.WriteLine("This product is already have");
+                    break;
+                }
+            }
+            if (checker)
+                ProductList.Add(products);
         }
 
         public virtual void Delete(Products products)
